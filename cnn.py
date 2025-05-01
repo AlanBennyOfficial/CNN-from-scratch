@@ -4,7 +4,6 @@ from maxpool import MaxPool2
 from softmax import Softmax
 from sklearn.datasets import fetch_openml
 
-# Load MNIST from OpenML
 print("Downloading MNIST from OpenML...")
 mnist = fetch_openml('mnist_784', version=1)
 images = mnist.data.values.reshape(-1, 28, 28).astype(np.uint8)
