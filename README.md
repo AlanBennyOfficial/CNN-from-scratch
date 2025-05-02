@@ -2,6 +2,10 @@
 
 A Convolutional Neural Network build from scratch using Numpy and trained on the MNIST dataset.
 
-### To Execute:
+### Usage:
 
-run `cnn.py` or `cnn.ipynb`
+1. `Fork` this Repository
+
+2. Clone this repository using `git clone <repo url>` (found in the `<> Code` dropdown)
+
+3. run `cnn.py` or `cnn.ipynb`
