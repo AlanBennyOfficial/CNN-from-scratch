@@ -35,25 +35,25 @@ def forward(image, label):
     return out, loss, acc
 
 def train(im, label, lr=.005):
-  '''
-  Completes a full training step on the given image and label.
-  Returns the cross-entropy loss and accuracy.
-  - image is a 2d numpy array
-  - label is a digit
-  - lr is the learning rate
-  '''
-  out, loss, acc = forward(im, label)
+    '''
+    Completes a full training step on the given image and label.
+    Returns the cross-entropy loss and accuracy.
+    - image is a 2d numpy array
+    - label is a digit
+    - lr is the learning rate
+    '''
+    out, loss, acc = forward(im, label)
 
-  # Calculate initial gradient
-  gradient = np.zeros(10)
-  gradient[label] = -1 / out[label]
+    # Calculate initial gradient
+    gradient = np.zeros(10)
+    gradient[label] = -1 / out[label]
 
-  # Backprop
-  gradient = softmax.backprop(gradient, lr)
-  # TODO: backprop MaxPool2 layer
-  # TODO: backprop Conv3x3 layer
+    # Backprop
+    gradient = softmax.backprop(gradient, lr)
+    # TODO: backprop MaxPool2 layer
+    # TODO: backprop Conv3x3 layer
 
-  return loss, acc
+    return loss, acc
 
 print('MNIST CNN initialized!')
 
@@ -61,26 +61,26 @@ print('MNIST CNN initialized!')
 loss = 0
 num_correct = 0
 for i, (im, label) in enumerate(zip(train_images, train_labels)):
-  if i % 100 == 99:
-    print(
-      '[Step %d] Past 100 steps: Average Loss %.3f | Accuracy: %d%%' %
-      (i + 1, loss / 100, num_correct)
-    )
-    loss = 0
-    num_correct = 0
+    if i % 100 == 99:
+        print(
+            '[Step %d] Past 100 steps: Average Loss %.3f | Accuracy: %d%%' %
+            (i + 1, loss / 100, num_correct)
+        )
+        loss = 0
+        num_correct = 0
 
-  l, acc = train(im, label)
-  loss += l
-  num_correct += acc
+    l, acc = train(im, label)   
+    loss += l
+    num_correct += acc
 
 # Test the CNN
 print('\n--- Testing the CNN ---')
 loss = 0
 num_correct = 0
 for im, label in zip(test_images, test_labels):
-  _, l, acc = forward(im, label)
-  loss += l
-  num_correct += acc
+    _, l, acc = forward(im, label)
+    loss += l
+    num_correct += acc
 
 num_tests = len(test_images)
 print('Test Loss:', loss / num_tests)
