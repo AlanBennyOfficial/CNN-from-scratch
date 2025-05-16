@@ -9,3 +9,9 @@ A Convolutional Neural Network build from scratch using Numpy and trained on the
 2. Clone this repository using `git clone <repo url>` (found in the `<> Code` dropdown)
 
 3. run `cnn.py` or `cnn.ipynb`
+
+
+## Profile view count:
+<div align="center">
+    <img src="https://profile-counter.glitch.me/CNN-from-scratch/count.svg?"  />
+</div>
