@@ -11,7 +11,7 @@ A Convolutional Neural Network build from scratch using Numpy and trained on the
 3. run `cnn.py` or `cnn.ipynb`
 
 
-## Profile view count:
+## View count:
 <div align="center">
     <img src="https://profile-counter.glitch.me/CNN-from-scratch/count.svg?"  />
 </div>
